@@ -1,0 +1,35 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="{% static 'home.css'%}">
+    <style>
+        img{
+    width: 20px;
+    height: 20px;
+    border-radius: 20px;
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        {% block content %}
+        {% for i in post %}
+        <img src="{{i.Image.url}}">
+       <b>Name:{{i.Name}}</b><br>
+        <h6>DOB:{{i.Dob}}</h6><br>
+        <h1 class="greeting">Hello {{i.Name}}</h1>
+        {% endfor%}
+        {% endblock content%}
+       <!-- <button class="logout" name="logout" href="../logout">log out</button>-->
+       <a href="../logout" class="logout" name="logout">log out</a>
+        <h1 class="greeting">Hello {{post.Name}}</h1>
+        
+    </div>
+    <script src="{% static 'home.js'%}"></script>
+    
+</body>
+</html>

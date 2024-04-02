@@ -1,0 +1,37 @@
+{% load static%}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Page</title>
+    <link rel="stylesheet" href="{% static 'form.css'%}">
+    <link rel="stylesheet" href="{% static 'signup.css'%}">
+</head>
+<body>
+    <div class="alert-box">
+        <p class="alert"></p>
+    </div>
+    <div class="form">
+        <h1 class="heading">Register</h1>
+        <form action="" method="POST" enctype="multipart/form-data">{% csrf_token %}
+        <input type="text" placeholder="name" autocomplete="off" class="name" name="Name" required>
+        <input type="email" placeholder="email" autocomplete="off" class="email" name="Email" required>
+        <input type="password" placeholder="password" autocomplete="off" class="password" name="Password" required>
+        <input type="date" placeholder="DOB" autocomplete="off" class="dob" name="Dob" required>
+        <h6>Upload your picture</h6>
+        <input type="file" placeholder="Upload Your image" autocomplete="off" class="image" name="Image" required>
+        <button class="submit-btn" onclick="Alert_signup">Register</button>
+        </form>
+        <a href="/" class="link" name="login">already have an account? login here</a>
+    </div>
+    <script src="{% static 'form.js'%}"></script>
+    <script>
+        function Alert_signup(
+            alert("Sucessfully Register and you can login now")
+        )
+    </script>
+</body>
+</html>
+{% endblock content%}

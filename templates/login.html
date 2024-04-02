@@ -1,0 +1,26 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="{% static 'form.css'%}">
+</head>
+<body>
+    <div class="alert-box">
+       <p class="alert">msg</p> 
+    </div>
+<div class="form">
+    <h1 class="heading" style="color: blue;">BUCK</h1>
+    <h1 class="heading">login</h1>
+    <form action="" method="POST" enctype="multipart/form-data">{% csrf_token %}
+    <input type="email" placeholder="email" autocomplete="off" class="email" name="Email" required>
+    <input type="password" placeholder="password" autocomplete="off" class="password" name="Password" required>
+    <button class="submit-btn">Login</button>
+    </form>
+    <a href="/signup" class="link">don't have an accoubnt? Register one</a>
+</div>  
+  <script src="{%static 'form.js'%}"></script>
+</body>
+</html>
